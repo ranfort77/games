@@ -1,0 +1,37 @@
+main {
+
+ 
+
+    if(get_val(XB1_A)){  // If A / Cross is held...
+
+        
+
+        if(event_press(XB1_A)){  // When first pressed....
+
+            combo_run(single_jump); // Run combo single jump
+
+        }
+
+        block(XB1_A, 600); // Block the forwarding of A / Cross from the controller for 500 ms
+
+    
+
+    }
+
+ 
+
+}
+
+ 
+
+combo single_jump {
+
+ 
+
+    set_val(XB1_A, 100);
+
+    wait(300);
+
+ 
+
+}

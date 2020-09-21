@@ -1,0 +1,32 @@
+int days;
+int hours;
+int minutes;
+int seconds;
+int milliseconds;
+
+main {
+    milliseconds = milliseconds + get_rtime();
+
+    if(milliseconds >= 1000) {
+        milliseconds = milliseconds - 1000
+        seconds = seconds + 1;
+        if(seconds == 60) {
+            seconds = 0;
+            minutes = minutes + 1;
+            if(minutes == 60) {
+                minutes = 0;
+                hours = hours + 1;
+                if(hours == 24) {
+                    hours = 0;
+                    days = days + 1;
+                }
+            }
+        }
+    }
+
+    set_val(TRACE_1, days);
+    set_val(TRACE_2, hours);
+    set_val(TRACE_3, minutes);
+    set_val(TRACE_4, seconds);
+    set_val(TRACE_5, milliseconds / 10);
+}

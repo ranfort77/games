@@ -1,0 +1,22 @@
+
+define btnPressTime =  50;
+define triRepTime = 30000;
+
+int switch = FALSE;
+
+main {
+    if (event_press(PS4_L2)) {
+        switch = !switch;
+    }
+
+    if (switch) {
+        combo_run(mycombo);
+    }
+}
+
+combo mycombo {
+    set_val(PS4_TRIANGLE, 100);
+    wait(btnPressTime);
+    wait(triRepTime - btnPressTime);
+}
+

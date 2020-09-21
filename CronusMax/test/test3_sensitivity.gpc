@@ -1,0 +1,7 @@
+
+
+
+main {
+    set_val(PS4_LX, 10);
+    sensitivity(PS4_LX, 70, 140);
+}

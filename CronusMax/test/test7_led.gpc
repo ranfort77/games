@@ -1,0 +1,8 @@
+
+main () {
+
+    if (get_val(PS4_CIRCLE)) {
+        set_led(LED_1, 0);
+    }
+    
+}

@@ -1,0 +1,146 @@
+
+
+main {
+  if (get_val(PS3_R2)) {
+      combo_run(EWGFLPos);
+  }
+  if (get_val(PS3_L2)) {
+      combo_run(EWGFRPos);
+  }
+  if (get_val(PS3_R1)) {
+      combo_run(waveDashLPos);
+  }
+  if (get_val(PS3_L1)) {
+      combo_run(waveDashRPos);
+  }  
+}
+
+combo EWGFLPos {
+  set_val(PS3_RIGHT,0);
+  wait(20);
+  set_val(PS3_RIGHT,100);
+  wait(20);
+  set_val(PS3_RIGHT,0);
+  wait(20);
+  set_val(PS3_DOWN, 100);
+  wait(20);
+  set_val(PS3_RIGHT,100);
+  set_val(PS3_DOWN, 100);
+  set_val(PS3_TRIANGLE, 100);  
+  wait(20);
+  wait(220);
+}
+ 
+combo EWGFRPos {
+  set_val(PS3_LEFT,0);
+  wait(20);
+  set_val(PS3_LEFT,100);
+  wait(20);
+  set_val(PS3_LEFT, 0);
+  wait(20);
+  set_val(PS3_DOWN,100);  
+  wait(20);  
+  set_val(PS3_LEFT,100);
+  set_val(PS3_DOWN,100);
+  set_val(PS3_TRIANGLE, 100);    
+  wait(20);
+  wait(220);
+}
+
+combo waveDashLPos {
+    set_val(PS3_RIGHT, 100);
+    wait(40);
+    set_val(PS3_RIGHT, 0);
+    wait(40);
+    set_val(PS3_RIGHT, 100);
+    wait(40);
+    set_val(PS3_RIGHT, 0);
+    wait(80);
+    set_val(PS3_DOWN, 100);
+    wait(40);
+    set_val(PS3_RIGHT, 100);
+    set_val(PS3_DOWN, 100);
+    wait(40);
+    set_val(PS3_RIGHT, 0);
+    set_val(PS3_DOWN, 0);
+}
+
+combo waveDashRPos {
+    set_val(PS3_LEFT, 100);
+    wait(40);
+    set_val(PS3_LEFT, 0);
+    wait(40);
+    set_val(PS3_LEFT, 100);
+    wait(40);
+    set_val(PS3_LEFT, 0);
+    wait(80);
+    set_val(PS3_DOWN, 100);
+    wait(40);
+    set_val(PS3_LEFT, 100);
+    set_val(PS3_DOWN, 100);
+    wait(40);
+    set_val(PS3_LEFT, 0);
+    set_val(PS3_DOWN, 0);
+}
+
+/*
+combo backDashLPos {
+  set_val(PS3_LEFT, 0);
+  wait(20);
+  set_val(PS3_LEFT, 100);
+  wait(20);
+  set_val(PS3_LEFT, 0);
+  wait(20);
+  set_val(PS3_LEFT, 100);
+  wait(100);
+  set_val(PS3_LEFT, 0);
+  wait(20);
+  set_val(PS3_LEFT, 100);
+  set_val(PS3_DOWN, 100);
+  wait(20);  
+  set_val(PS3_LEFT, 0);
+  set_val(PS3_DOWN, 0);  
+  wait(20); 
+}
+
+combo backDashRPos {
+  set_val(PS3_RIGHT, 100);
+  wait(20);
+  set_val(PS3_RIGHT, 0);
+  wait(20);
+  set_val(PS3_RIGHT, 100);
+  wait(20);
+  set_val(PS3_RIGHT, 0);
+  wait(100);
+  set_val(PS3_RIGHT, 100);
+  set_val(PS3_DOWN, 100);
+  wait(20);  
+  set_val(PS3_RIGHT, 0);
+  set_val(PS3_DOWN, 0);  
+  wait(20); 
+}
+*/
+
+// https://www.consoletuner.com/forum/viewtopic.php?f=26&t=6404
+/*
+combo backdash {
+
+set_val(PS4_LEFT, 100);
+    wait(20);
+    set_val(PS4_LEFT, 0);
+    wait(20);
+    set_val(PS4_LEFT, 100);
+    wait(20);
+    set_val(PS4_LEFT, 0);
+    wait(180);
+    set_val(PS4_LEFT, 100);
+    set_val(PS4_DOWN, 100);
+    wait(20);
+    set_val(PS4_LEFT, 0);
+    set_val(PS4_DOWN, 0);
+
+}
+*/
+
+
+

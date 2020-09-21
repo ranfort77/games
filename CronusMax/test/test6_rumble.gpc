@@ -1,0 +1,17 @@
+
+int L2rumble = 0
+int R2rumble = 0
+
+main () {
+    L2rumble = get_val(PS4_L2);
+    R2rumble = get_val(PS4_R2);
+    
+    
+    if (L2rumble) {
+        set_rumble(RUMBLE_A, L2rumble);
+    }
+    
+    if (R2rumble) {
+        set_rumble(RUMBLE_B, R2rumble);
+    }
+}

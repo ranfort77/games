@@ -1,0 +1,11 @@
+
+int switch = FALSE;
+
+main {
+    set_val(TRACE_1, switch);
+    set_val(TRACE_2, switch + 2);
+    set_val(TRACE_3, switch - TRUE);
+    set_val(TRACE_4, PS4_L2);
+}
+
+

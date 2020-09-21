@@ -1,0 +1,13 @@
+
+
+main {
+
+    set_val(TRACE_1, get_ptime(XB1_A)/100);
+    if (get_ptime(XB1_A) > 2000) {
+        set_val(TRACE_2, 1);
+    }
+    else {
+        set_val(TRACE_2, 0);
+    }
+
+}

@@ -1,0 +1,8 @@
+
+main {
+    if (get_val(PS4_R2)) {
+        set_val(PS4_R1, 100);
+    }
+}
+
+

@@ -1,0 +1,61 @@
+
+int ajSwitch = FALSE;
+
+int xySwitch = FALSE;
+
+int xyTime = 0;
+int xyEnd  = 800; // 대태도 최적화
+
+int nxy = 0;
+
+int t1 = 600; int t2 = 400;
+
+int waitTime = 0;
+
+// 1=도, 2=쌍도, 3=창, 4=도끼, 5=사슬낫, 6=
+int 
+
+main() {
+
+    if (get_val(XB1_RB) && get_val(XB1_LB) && event_press(XB1_B)) {
+        
+    }
+
+    if (get_val(XB1_RB)) {
+        if (event_press(XB1_LB)) {
+            ajSwitch = TRUE;
+        } else if (event_press(XB1_LT)) {
+            ajSwitch = FALSE;
+        }
+    }
+  
+    if ((event_press(XB1_X) || event_press(XB1_Y)) && ajSwitch) {
+        if (!xySwitch) {
+            xySwitch = TRUE;
+            xyTime = 0;
+            nxy = nxy + 1;
+        } else if (xyTime < xyEnd) {
+            xyTime = 0;
+            nxy = nxy + 1;
+        }
+    }
+
+    if (xySwitch) {
+        xyTime = xyTime + get_rtime();
+    }
+    if (xyTime > xyEnd) {
+        combo_run(jansim);
+    }
+}
+
+combo jansim {
+    waitTime = t1 + (nxy-1)*t2;
+    set_val(TRACE_3,waitTime/100);
+    set_val(XB1_RB, 0);
+    wait(waitTime);
+    set_val(XB1_RB, 100);
+    wait(100);    
+    xySwitch = FALSE;
+    xyTime = 0;
+    nxy = 0;   
+}

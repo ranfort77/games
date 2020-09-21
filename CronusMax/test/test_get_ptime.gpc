@@ -1,0 +1,12 @@
+
+
+main {
+
+    if (get_ptime(XB1_A)) {
+        set_val(TRACE_1, 1);
+    }
+    else {
+        set_val(TRACE_1, 0);
+    }
+
+}

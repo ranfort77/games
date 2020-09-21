@@ -1,0 +1,12 @@
+
+main() {
+    if (event_release(XB1_X) && get_ptime(XB1_X) < 500) {
+        combo_run(aaa);
+        
+    }
+}
+
+combo aaa {
+   set_val(XB1_RB, 100);
+   wait(200);
+}

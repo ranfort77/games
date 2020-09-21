@@ -1,0 +1,56 @@
+
+define btnPressTime =  20;
+define crossTime =     50;
+define circleTime =    50;
+define squareTime =    50;
+define triangTime =    50;
+define R1Time =        50;
+define R2Time =        50;
+
+int switch = FALSE;
+
+main {
+    if (event_press(PS4_L2)) {
+        switch = !switch;
+    }
+
+    if (switch) {
+        combo_run(crossCombo);
+        combo_run(circleCombo);
+        combo_run(squareCombo);
+        combo_run(triangCombo);
+        combo_run(R1Combo);
+        combo_run(R2Combo);
+    }
+}
+
+combo crossCombo {
+    set_val(PS4_CROSS, 100);
+    wait(btnPressTime);
+    wait(crossTime - btnPressTime);
+}
+combo circleCombo {
+    set_val(PS4_CIRCLE, 100);
+    wait(btnPressTime);
+    wait(circleTime - btnPressTime);
+}
+combo squareCombo {
+    set_val(PS4_SQUARE, 100);
+    wait(btnPressTime);
+    wait(squareTime - btnPressTime);
+}
+combo triangCombo {
+    set_val(PS4_TRIANGLE, 100);
+    wait(btnPressTime);
+    wait(triangTime - btnPressTime);
+}
+combo R1Combo {
+    set_val(PS4_R1, 100);
+    wait(btnPressTime);
+    wait(R1Time - btnPressTime);
+}
+combo R2Combo {
+    set_val(PS4_R2, 100);
+    wait(btnPressTime);
+    wait(R2Time - btnPressTime);
+}

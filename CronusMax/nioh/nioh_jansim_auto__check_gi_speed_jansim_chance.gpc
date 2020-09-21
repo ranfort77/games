@@ -1,0 +1,39 @@
+
+//int xyend = 1160; // 누른고 20 ms후, x를 다시 눌렀을 때, 대태도 상단 XX 딜레이
+int recover_gi = 34;
+int giratiotime = 25;
+int resttime = 0;
+int jansimchancesec = 0;
+
+main() {
+    if (event_press(XB1_RT)) {
+        combo_run(xx);
+    }
+    
+    if (get_val(XB1_RB) && get_val(XB1_LB) && event_press(XB1_X)) {
+        giratiotime = giratiotime + 5;
+    }
+    if (get_val(XB1_RB) && get_val(XB1_LB) && event_press(XB1_Y)) {
+        giratiotime = giratiotime - 5;
+    }   
+    if (get_val(XB1_RB) && get_val(XB1_LB) && event_press(XB1_A)) {
+        jansimchancesec = jansimchancesec + 10;
+    }
+    if (get_val(XB1_RB) && get_val(XB1_LB) && event_press(XB1_B)) {
+        jansimchancesec = jansimchancesec - 10;
+    }     
+}
+
+combo xx {
+   set_val(XB1_X, 100);
+   wait(100);
+   set_val(XB1_X, 0);
+   wait(100);
+   set_val(XB1_X, 100);
+   wait(20);
+   resttime = recover_gi * giratiotime + jansimchancesec;
+   wait(resttime);
+   set_val(XB1_RB, 100);
+   wait(20);
+}
+

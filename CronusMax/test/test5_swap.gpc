@@ -1,0 +1,4 @@
+
+main () {
+    deadzone(PS4_LX, PS4_LY, 10, 10);
+}

@@ -1,0 +1,9 @@
+
+remap PS4_L1 -> PS4_R2
+remap PS4_R2 -> PS4_L1
+
+main {
+
+}
+
+

@@ -1,0 +1,95 @@
+/*
+Last edit: 2019-01-23
+
+reference 
+  https://blog.naver.com/PostView.nhn?blogId=plus-point&logNo=221244287056
+
+Butten setting
+  X: Whirlwind (Blood Funnel)  소용돌이 (피훔치기)
+  R2: Wrath of the Berserker (Insanity)  광전사의 진노 (광기)
+  □: War Cry (Impunity)  전장의 함성 (역전용사의 경고)
+  △: Battle Rage (Bloodshed)  전투 격노 (유혈 사태)
+  O: Threatening Shout (Demoralize)  위협의 외침 (도발)
+  R1: Ignore Pain (Ignorance is Bliss)  고통 감내 (참는게 약이다)
+  
+Passive
+  Ruthless  무자비
+  Berserker Rage  격노한 광전사 
+  Nerves of Steel  
+  Boon of Bul-Kathos  불카도스의 은총
+  Rampage  광란
+  Weapons Master 무기의 달인
+*/
+
+
+int circlePressTime = 100, circleRestTime = 100;
+int crossPressTime = 100, crossRestTime = 100;
+int squarePressTime = 100, squareRestTime = 100;
+int trianglePressTime = 100, triangleRestTime = 100;
+int R1PressTime = 100, R1RestTime = 100;
+int R2PressTime = 100, R2RestTime = 100;
+int L2MacroSwitch = FALSE;
+
+main {
+    if (L2MacroSwitch) {
+        combo_run(circleCombo);
+        //combo_run(crossCombo);
+        combo_run(squareCombo);
+        //combo_run(triangleCombo);
+        combo_run(R1Combo);
+        combo_run(R2Combo);
+    }
+    
+    if (event_press(PS4_L2)) {
+        combo_run(macroOnOff);
+    }
+}
+
+combo macroOnOff {
+    if (L2MacroSwitch) {
+        L2MacroSwitch = FALSE;
+    } else {
+        L2MacroSwitch = TRUE;
+    }
+    set_val(PS4_L2, 100);
+    wait(10);
+    wait(10);
+}
+
+
+combo circleCombo {
+    set_val(PS4_CIRCLE, 100); 
+    wait(circlePressTime);
+    wait(circleRestTime);
+}
+
+combo crossCombo {
+    set_val(PS4_CROSS, 100); 
+    wait(crossPressTime);
+    wait(crossRestTime);
+}
+
+combo squareCombo {
+    set_val(PS4_SQUARE, 100); 
+    wait(squarePressTime);
+    wait(squareRestTime);
+}
+
+combo triangleCombo {
+    set_val(PS4_TRIANGLE, 100); 
+    wait(trianglePressTime);
+    wait(triangleRestTime);
+}
+
+combo R1Combo {
+    set_val(PS4_R1, 100); 
+    wait(R1PressTime);
+    wait(R1RestTime);
+}
+
+combo R2Combo {
+    set_val(PS4_R2, 100); 
+    wait(R2PressTime);
+    wait(R2RestTime);
+}
+

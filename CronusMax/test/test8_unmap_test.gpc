@@ -1,0 +1,17 @@
+
+
+
+unmap XB1_X;
+
+ 
+
+main {
+
+    if(get_val(XB1_X)){
+
+        set_val(XB1_A, 100);
+
+    }
+
+}
+ 
