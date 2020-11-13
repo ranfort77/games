@@ -1,0 +1,22 @@
+
+int switch = FALSE;
+
+main {
+    if (event_press(PS4_L2)) {
+        switch = !switch;
+    }
+
+    if (switch) {
+        combo_run(mycombo);
+    }
+}
+
+combo mycombo {
+    set_val(PS4_CIRCLE, 100);
+    wait(100);
+    wait(100);
+}
+
+
+
+
